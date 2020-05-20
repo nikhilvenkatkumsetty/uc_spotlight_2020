@@ -16,5 +16,11 @@ source /opt/miniconda/bin/activate uc
 pip install -r /opt/uc_flask/env/req.txt
 python -c "import nltk; nltk.download('punkt')"
 
-# Run Flask
-python /opt/uc_flask/manage.py run --cert=adhoc -h 0.0.0.0
+# Create Certificate
+openssl req -newkey rsa:2048 -nodes -keyout /opt/esri_flask.key -x509 -days 365 -out /opt/esri_flask.crt -subj "/C=US/ST=ST/L=L/O=O/CN=CN"
+
+# Print IP
+hostname -I
+
+# Run Flask with Gunicorn
+gunicorn --bind 0.0.0.0:5000 --chdir /opt/uc_flask/ manage:app --certfile=/opt/esri_flask.crt --keyfile=/opt/esri_flask.key
