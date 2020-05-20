@@ -32,7 +32,7 @@ class Extractor(object):
         self.v2_urls = self.get_v2_urls()
         self.v1_urls = self.get_v1_urls()
 
-        self.articles = True
+        self.articles = False
 
     @staticmethod
     def get_v2_urls():
