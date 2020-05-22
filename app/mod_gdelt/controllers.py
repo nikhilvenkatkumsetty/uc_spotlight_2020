@@ -7,6 +7,7 @@ from flask import Blueprint, request, jsonify, render_template
 from .extractor import Extractor
 import traceback
 import sqlite3
+import json
 import time
 import os
 
@@ -28,6 +29,7 @@ def filter_event(event_list):
         return False
     else:
         for event in event_list:
+            print(f'{event["operation"].upper()} @ {event["id"]}')
             if event['operation'] == 'update':
                 return event['id']
 
