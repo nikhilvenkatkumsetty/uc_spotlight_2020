@@ -1,4 +1,5 @@
 from flask import Blueprint, request, render_template, redirect, url_for
+from arcgis.gis import GIS
 import sqlite3
 import os
 
@@ -29,8 +30,16 @@ def configure():
         username  = request.form.get('username')
         password  = request.form.get('password')
 
-        # Write Values into SQLite DB
-        cur.execute(f"insert or replace into config values ('{esri_url}', '{username}', '{password}')")
-        con.commit()
+        try:
+            # Ensure User Information is Valid
+            gis = GIS(esri_url, username, password, verify_cert=False)
 
-        return f'Portal Information Configured'
+            # Truncate & Write Values into SQLite
+            cur.execute("delete from config")
+            cur.execute(f"insert or replace into config values ('{esri_url}', '{username}', '{password}')")
+            con.commit()
+
+            return render_template('admin/configure.html', validation=True, submitted=True, esri_url=str(gis))
+
+        except:
+            return render_template('admin/configure.html', validation=True, submitted=False)

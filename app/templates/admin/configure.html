@@ -18,8 +18,19 @@
                   <label>
                     Password <input name="password" type="text" value="gis12345">
                   </label>
-                  <button type="submit" class="btn">Submit</button>
+                  <button type="submit" class="btn btn-clear">Submit</button>
             </form>
+                {% if validation %}
+                    {% if submitted %}
+                    <div style="margin-top: 40px" class="js-animation animate-fade-in">
+                        <p class="text-green">Your Information Has Been Submitted for {{esri_url}}</p>
+                    </div>
+                    {% else %}
+                    <div style="margin-top: 40px" class="js-animation animate-fade-in">
+                        <p class="text-red">Could Not Connect to Portal. Please Try Again.</p>
+                    </div>
+                    {% endif %}
+                {% endif %}
         </div>
     </div>
     <script src="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.2.5/js/calcite-web.min.js"></script>
