@@ -3,15 +3,15 @@ Everything is this repo was developed for an Esri User Conference 2020 Spotlight
 
 ## Running this Sample with Vagrant
 
-If you are working on Windows and want to work with this Linux solution, the Vagrant directory has files that can be used for testing. 
+If you would like to experiment with this solution on your system, the Vagrant directory has files that can be used for testing. 
 
 * Requirements
 	* [Vagrant](https://www.vagrantup.com/downloads.html)
 	* [Oracle VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * Getting Started
 	* Install Vagrant and Oracle VirtualBox.
-	* Open a terminal (cmd or PowerShell) inside of the Vagrant folder. 
+	* Clone this directory to your machine.
+	* Open a terminal and navigate to the Vagrant folder. 
 	* Run the following command: **vagrant up**
-		* This will create a virtual machine, pull down this GitHub repository, and run the install.sh script.
-	* Run the following command: **vagrant ssh**
-		* This will give you access to a Centos 7 machine with everything described in the Installation section.
+	* Navigate to https://ip:5000/admin. The IP for your VM was printed to the console at the end of the vagrant up
+	  command. 
