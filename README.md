@@ -6,8 +6,8 @@ Everything is this repo was developed for an Esri User Conference 2020 Spotlight
 If you would like to experiment with this solution on your system, the Vagrant directory has files that can be used for testing. 
 
 * Requirements
-	* <a href="https://www.vagrantup.com/downloads.html" target="_blank">Vagrant</a>
-	* <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">Oracle VirtualBox</a>
+	* <a href="https://www.vagrantup.com/downloads.html">Vagrant</a>
+	* <a href="https://www.virtualbox.org/wiki/Downloads">Oracle VirtualBox</a>
 * Getting Started
 	* Install Vagrant and Oracle VirtualBox.
 	* Clone this repository to your machine and navigate to the Vagrant folder it created.
