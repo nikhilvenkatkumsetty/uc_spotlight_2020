@@ -9,16 +9,17 @@
     <div style="margin-top: 100px">
         <div class="grid-container">
             <form method="post">
-                  <label>
-                    Esri URL <input name="esri_url" type="text" value="https://scarmazzij.esri.com/portal">
-                  </label>
-                  <label>
+                <h1 class="text-off-black" style="margin-bottom: 50px">Configure Flask with Portal Credentials</h1>
+                <label>
+                    Portal Web Adaptor URL <input name="esri_url" type="text" value="https://scarmazzij.esri.com/portal">
+                </label>
+                <label>
                     Username <input name="username"  type="text" value="siteadmin">
-                  </label>
-                  <label>
+                </label>
+                <label>
                     Password <input name="password" type="text" value="gis12345">
-                  </label>
-                  <button type="submit" class="btn btn-clear">Submit</button>
+                </label>
+                <button type="submit" class="btn btn-clear">Submit</button>
             </form>
                 {% if validation %}
                     {% if submitted %}
