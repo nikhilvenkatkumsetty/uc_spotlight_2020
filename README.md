@@ -12,5 +12,6 @@ If you would like to experiment with this solution on your system, the Vagrant d
 	* Install Vagrant and Oracle VirtualBox.
 	* Clone this repository to your machine and navigate to the Vagrant folder it created.
 	* Run the following command: **vagrant up**
+	  * You will run into issues if Hyper-V is enabled on your system.
 	* Navigate to https://ip:5000/admin. The IP for your VM was printed to the console at the end of the vagrant up
 	  command. 

@@ -26,4 +26,4 @@ openssl req -newkey rsa:2048 -nodes -keyout /opt/esri_flask.key -x509 -days 365 
 echo "VM IP: `hostname -I`"
 
 # Run Flask Application
-gunicorn --bind 0.0.0.0:5000 --chdir /opt/uc_flask/ manage:app --certfile=/opt/esri_flask.crt --keyfile=/opt/esri_flask.key --workers 2 --timeout 300 --log-level info
+gunicorn --bind 0.0.0.0:5000 --chdir /opt/uc_flask/ manage:app --certfile=/opt/esri_flask.crt --keyfile=/opt/esri_flask.key --workers 2 --timeout 300

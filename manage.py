@@ -4,7 +4,7 @@ from app import app
 
 cli = FlaskGroup(app)
 
-# python manage.py run --cert=adhoc -h 0.0.0.0
+# Command Line - python manage.py run --cert=adhoc -h 127.0.0.1
 
 if __name__ == "__main__":
     cli()
